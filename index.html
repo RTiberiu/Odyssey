@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/css.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+    <script type="module" src="./public/js/home.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Odyssey</title>
+    <link rel="icon" href="./public/Pictures/brush.svg">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div id="rectangle">
+            <span id="left"></span>
+            <span id="top"></span>
+            <span id="right"></span>
+            <span id="bottom"></span>
+            <h1>Odyssey</h1>
+            <img id="leftHand" src="./public/Pictures/Preloader/leftHand.svg" alt="leftHand">
+            <img id="rightHand" src="./public/Pictures/Preloader/rightHand.svg" alt="rightHand">
+        </div>
+        <h2 id="artworkName">The Creation of Adam</h2>
+        <h2 id="artist">Michelangelo</h2>
+    </div>
+
+    <header>
+        <img id="logo" src="./public/Pictures/logo1.svg" alt="logo">
+
+        <nav>
+            <a href="/index.html" id="page1">HOME</a>
+            <a href="/Pages/profile.html" id="page2">PROFILE</a>
+            <a href="#" id="sign-in">SIGN UP</a>
+            <!-- <a href="/signout" id="sign-out">SIGN OUT</a> -->
+            <input type="text" id="searchInput" placeholder="Search...">
+            <i class="fa-solid fa-magnifying-glass" id="search"></i>
+        </nav>
+
+        <div id="music">
+            <div id="controls">
+                <i class="fa-solid fa-minus" id="volumeDown"></i>
+                <i class="fa-solid fa-play" id="play"></i>
+                <i class="fa-solid fa-pause" id="pause"></i>
+                <i class="fa-solid fa-plus" id="volumeUp"></i>
+            </div>
+
+            <div id="toggleGenre">
+                <img src="./public/Pictures/lofi.svg" alt="lofi" id="lofi">
+                <i class="fa-regular fa-circle" id="circle"></i>
+                <img src="./public/Pictures/piano.png" alt="piano" id="piano">
+            </div>
+        </div>
+    </header>
+
+    <main>
+    </main>
+
+    <footer>
+        <i class="fa-solid fa-feather-pointed" id="feather"></i>
+        <i class="fa-solid fa-paintbrush" id="paintbrush"></i>
+    </footer>
+
+</body>
+
+</html>

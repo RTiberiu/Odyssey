@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../public/css/css.css">
+    <link rel="stylesheet" href="../public/css/followed.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="../public/js/profile.js"></script>
+    <script type="module" src="../public/js/signIn.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Odyssey - Profile</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="../public/Pictures/logo1.svg" alt="logo">
+        
+        <nav>
+            <a href="/index.html" id="page1">HOME</a>
+            <a href="/Pages/profile.html" id="page2">PROFILE</a>
+            <a href="#" id="sign-in">SIGN UP</a>
+            <!-- <a href="/signout" id="sign-out">SIGN OUT</a> -->
+            <input type="text" id="searchInput" placeholder="Search...">
+            <i class="fa-solid fa-magnifying-glass" id="search"></i>
+        </nav>
+        
+        <div id="music">    
+            <div id="controls">
+                <i class="fa-solid fa-minus" id="volumeDown"></i>
+                <i class="fa-solid fa-play" id="play"></i>
+                <i class="fa-solid fa-pause" id="pause"></i>
+                <i class="fa-solid fa-plus" id="volumeUp"></i>
+            </div>
+
+            <div id="toggleGenre">
+                <img src="../public/Pictures/lofi.svg" alt="lofi" id="lofi">
+                <i class="fa-regular fa-circle" id="circle"></i>
+                <img src="../public/Pictures/piano.png" alt="piano" id="piano">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="profileContainer"> 
+            <div id="accountContainer">
+                <div id="pictureContainer">
+                    <img src="../public/Pictures/Profile/Tiberiu.jpg" alt="">
+                </div>
+                <div id="accountDetails">
+                    <div id="artContainer">
+                        <h2>23</h2>
+                        <h3>Artworks</h3>
+                    </div>
+                    <div id="followersContainer">
+                        <h2>42</h2>
+                        <h3>Followers</h3>
+                    </div>
+                </div>
+                <div id="gradient">
+                    <h1>TIBERIU</h1>
+                </div>
+            </div>
+
+            <div id="descriptionContainer">
+                <h1>About Me</h1>
+                <p id="userDescription">Tyrion Lannister, serves as the Hand of the King to King Joffrey I Baratheon, his nephew. He is currently in exile amongst the Second Sons in Essos.</p>
+                <h1>Favourite arists</h1>
+                <p><span id="artist1">George RR Martin</span>, <span id="artist2">Fyodor Dostoevsky</span>, <span id="artist3">George Orwell</span>.</p>
+            </div>
+        </div>
+
+        <div id="toggleContainer">
+            <div id="toggle">
+                <div id="toggleElement"></div>
+                <h1 id="account">ACCOUNT</h1>
+                <h1 id="followers">FOLLOWERS</h1>
+            </div>
+        </div>
+        <div id="profileUser"></div>
+        <div id="profileFollowed"></div>
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
