@@ -56,8 +56,9 @@ $(document).ready(function () {
 
         // Initialize the rows only on the home page.
         // (This prevents the script from running when getting imported by another file)
-        let htmlLocation = document.location.href.match(/[^\/]+$/)[0];
-        if (htmlLocation == 'index.html' && runHomeJS) {
+        let currentHtmlLocation = document.location.href;
+        let websiteURL = 'https://odyssey-art-and-poems.netlify.app/';
+        if (currentHtmlLocation == websiteURL && runHomeJS) {
             initializeRows();
             loadingAnimation();
         }
