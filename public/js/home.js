@@ -58,7 +58,7 @@ $(document).ready(function () {
         // (This prevents the script from running when getting imported by another file)
         let currentHtmlLocation = document.location.href;
         let websiteURL = 'https://odyssey-art-and-poems.netlify.app/';
-        if (currentHtmlLocation == websiteURL && runHomeJS) {
+        if ((currentHtmlLocation == websiteURL || currentHtmlLocation == `${websiteURL}index.html`) && runHomeJS) {
             initializeRows();
             loadingAnimation();
         }
