@@ -550,7 +550,7 @@ function initializeMusic() {
         } else {
             lofiCounter++;
         }
-        lofi.src = `../Music/Lofi/${lofiCounter}.mp3`;
+        lofi.src = `./public/Music/Lofi/${lofiCounter}.mp3`;
         lofi.play();
     });
 
@@ -560,7 +560,7 @@ function initializeMusic() {
         } else {
             pianoCounter++;
         }
-        piano.src = `../Music/Piano/${pianoCounter}.mp3`;
+        piano.src = `./public/Music/Piano/${pianoCounter}.mp3`;
         piano.play();
     });
 
