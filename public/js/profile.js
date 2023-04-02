@@ -13,8 +13,6 @@ $(document).ready(function () {
     $(window).on('load', function () {
         $('body').show();
 
-        console.log('Running profile.js');
-
         //Registering GSAP's plugins
         gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, ScrollToPlugin);
 
@@ -30,10 +28,7 @@ $(document).ready(function () {
         const vw = (coef) => window.innerWidth * (coef / 100);
         const vh = (coef) => window.innerHeight * (coef / 100);
 
-        //simulateFollowerPage();
-        // initializeMusic();
         $('#followers').click(function () {
-            console.log("Toggle triggered!")
             gsap.timeline().to($('#toggleElement'), .5, {
                 margin: '0% 0% 0% 50%',
                 ease: 'power1.intOut'
@@ -49,7 +44,6 @@ $(document).ready(function () {
         });
 
         $('#account').click(function () {
-            console.log("Toggle triggered!")
             gsap.timeline().to($('#toggleElement'), .5, {
                 margin: '0% 0% 0% 0%',
                 ease: 'power1.intOut'
@@ -62,140 +56,9 @@ $(document).ready(function () {
                     color: '#101010',
                     ease: 'power1.intOut'
                 }, '-=.5')
-
-            // if (buttonClicked == true) {
-            //     hideFollowed();
-            //     createProfile(currentUserData[0], currentUserData[1], currentUserData[2]);
-            //     buttonClicked = false;
-            //     // createArtRows(3, $('main'), true);
-            //     // initializeContainerClick(true);
-            //     getCurrentUsersArtworks();
-            // }
-
         });
-
-        // $.ajax({
-        //     url: '/profileMain',
-        //     success: function (result) {
-        //         currentUserData = result;
-        //         console.log("Current user data from profile");
-        //         console.log(currentUserData);
-
-        //         if (defaultState == true) {
-        //             defaultState = false;
-        //             buttonClicked = false;
-        //             // template: createProfile (name, avatar, description)
-        //             createProfile(result[0], result[1], result[2]);
-        //             buttonClicked = false;
-        //             getCurrentUsersArtworks();
-        //         }
-        //     }
-        // });
-
     });
 });
-
-
-// A function that dynamically creates HTML code for the followed people and appends it to the appropriate div
-function displayFollowed() {
-    $('#profileFollowed').append('<div class="followedWrapper"> </div>')
-    let followedCount = 0;
-    while (followedCount < followed.length) {
-        let followedArticle;
-        $('.followedWrapper').append('<div class="articleRow"></div>');
-        try {
-            for (let i = 0; i < followedPerRow; i++) {
-                let element = followed[followedCount];
-                followedArticle = `
-                    <article class = "followed" id="f-${element.id}">
-                        <div class="followedAvatar">
-                            <img src=${element.profileAvatar}>
-                            <div class="followedName">
-                                <p>${element.profileName}</p>
-                            </div>
-                        </div>
-                    </article>
-                `;
-                followedCount++;
-                $('.articleRow').last().append(followedArticle);
-            }
-        } catch {
-            break;
-        }
-    }
-}
-
-function loadMoreArtwork() {
-    $('.openedDashboard').scroll(() => {
-        let pane = $('.openedDashboard');
-        let totalPaneHeight = $(pane).prop('scrollHeight');
-        let paneHeight = $(pane).height();
-        console.log("You're srolling!");
-        console.log("Window height:" + window.innerHeight);
-        console.log("scrollTop: " + $(pane).scrollTop());
-        console.log("pane height: " + paneHeight);
-        console.log("pane scroll height: " + totalPaneHeight);
-        if ($(pane).scrollTop() + $(pane).height() >= totalPaneHeight - 1 * paneHeight) {
-            console.log("Loading more!!!");
-            createArtRows(3, $('.openedDashboard'), true);
-            initializeContainerHover(true);
-            initializeContainerClick(true);
-        }
-    });
-}
-
-function hideFollowed() {
-    $('.followedWrapper').remove();
-}
-
-function getCurrentUsersArtworks() {
-    console.log("getCurrentUsersArtwork()");
-    $.post('/pullDb', { currentUser: "yes", user: "user" }, function (result) {
-        console.log("The result from the server is:");
-        console.log(result);
-        if (result == "empty") {
-            $('main').append(`<div id="profileDashboardMessage"><h3> This user's dashboard is currently empty. </h3></div>`);
-        } else if (result == "noUser") {
-            console.log("Could not find the user!!");
-        }
-        else {
-            updateDatabaseData(result);
-            createArtRows(5, $('main'), true);
-            initializeContainerHover(true);
-            initializeContainerClick(true);
-        }
-    });
-    return false;
-}
-
-function getFollowedArtworks(numberOfRows, followedIndex) {
-    console.log("Called getFollowedArtworks!");
-    let numberOfArtworks = numberOfRows * 7;
-    $.post('/pullDb', { currentUser: "no", user: followedIndex }, function (result) {
-        if (result == "empty") {
-            $('main').append(`<div id="profileDashboardMessage"><h3> This user's dashboard is currently empty. </h3></div>`);
-        } else if (result == "noUser") {
-            console.log("Could not find the user!!");
-        } else {
-            updateDatabaseData(result);
-            createArtRows(numberOfRows, $('.openedDashboard'), true);
-            initializeContainerHover(true);
-            initializeContainerClick(true);
-        }
-    });
-    return false;
-}
-
-function createProfile(name, picture, info) {
-    $('#userName').text(name);
-    $('#pictureContainer').html(`<img src="${picture}" />`);
-    $('#userDescription').text(`${info}`);
-}
-
-function removeProfile() {
-    $('.layoutSettings').remove() + $("#profilePicNameLike").remove() + $("#profileInfo").remove();
-    $('#profileDashboardMessage').remove();
-}
 
 // Simulate a follower's page by adding the follow button and its logic
 function simulateFollowerPage(followed) {
@@ -251,7 +114,6 @@ function simulateFollowerPage(followed) {
                 autoAlpha: 1,
                 ease: 'power1.inOut'
             }, '-=.3')
-
             // TODO Store in database;
         }
     });

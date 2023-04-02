@@ -515,8 +515,8 @@ function initializeMusic() {
     let pianoCounter = getRandomNumber(1, pianoMax)
 
     // Start playing first lofi
-    let lofi = new Audio(`./public/Music/Lofi/${lofiCounter}.mp3`);
-    let piano = new Audio(`./public/Music/Piano/${pianoCounter}.mp3`);;
+    let lofi = new Audio(`../public/Music/Lofi/${lofiCounter}.mp3`);
+    let piano = new Audio(`../public/Music/Piano/${pianoCounter}.mp3`);;
     let playingLofi = false;
     let playing = false;
 
@@ -550,7 +550,7 @@ function initializeMusic() {
         } else {
             lofiCounter++;
         }
-        lofi.src = `./public/Music/Lofi/${lofiCounter}.mp3`;
+        lofi.src = `../public/Music/Lofi/${lofiCounter}.mp3`;
         lofi.play();
     });
 
@@ -560,7 +560,7 @@ function initializeMusic() {
         } else {
             pianoCounter++;
         }
-        piano.src = `./public/Music/Piano/${pianoCounter}.mp3`;
+        piano.src = `../public/Music/Piano/${pianoCounter}.mp3`;
         piano.play();
     });
 
@@ -1698,9 +1698,7 @@ function setStyleProperties(container) {
 
 // Allows the user to copy a text of the artwork
 function initializeShareLogic(database) {
-    console.log('Added logic');
     $('.fa-share').click(function () {
-        console.log('Share was clicked!')
         let artParent = $(this).parents('.container')
         let art = artParent.find(".artwork")
 
